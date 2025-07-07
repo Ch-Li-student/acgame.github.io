@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的世界导航站</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6', // HMCL主色调
+                        secondary: '#10B981',
+                        accent: '#8B5CF6',
+                        dark: '#1E293B', // HMCL背景色
+                        darker: '#0F172A', // 更深的背景色
+                        light: '#F8FAFC',
+                        curse: '#F96816',
+                        modrinth: '#1BD96A'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'hmcl': '0 4px 14px 0 rgba(0, 0, 0, 0.3)',
+                        'hmcl-hover': '0 6px 20px 0 rgba(0, 0, 0, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .btn-hmcl {
+                @apply bg-dark text-white rounded-xl shadow-hmcl transition-all duration-300 ease-in-out hover:shadow-hmcl-hover hover:bg-primary/90 transform hover:-translate-y-1;
+            }
+            .btn-curse {
+                @apply bg-curse text-white rounded-xl shadow-hmcl transition-all duration-300 ease-in-out hover:shadow-hmcl-hover hover:bg-curse/90 transform hover:-translate-y-1;
+            }
+            .btn-modrinth {
+                @apply bg-modrinth text-white rounded-xl shadow-hmcl transition-all duration-300 ease-in-out hover:shadow-hmcl-hover hover:bg-modrinth/90 transform hover:-translate-y-1;
+            }
+            .btn-center {
+                @apply flex items-center justify-center;
+            }
+            .nav-item {
+                @apply flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-200 hover:bg-primary/20 cursor-pointer;
+            }
+            .nav-item-active {
+                @apply bg-primary/30 font-medium;
+            }
+            .glass-effect {
+                @apply bg-white/10 backdrop-blur-md border border-white/20;
+            }
+            .sidebar-right {
+                @apply w-full md:w-64 bg-dark p-4 border-r border-gray-800 flex flex-col;
+            }
+        }
+    </style>
+</head>
+<body>
+    <aside class="w-full md:w-64 bg-dark p-4 border-r border-gray-800 flex flex-col h-screen">
+        <div class="mb-6">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
+                    <i class="fa fa-gamepad text-xl"></i>
+                </div>
+                <h1 class="text-xl font-bold">游戏导航站</h1>
+            </div>
+            
+            <nav class="space-y-1">
+                <a href="http://127.0.0.1:5500/ac.html" class="nav-item">
+                    <i class="fa fa-home w-5 text-center"></i>
+                    <span>主页</span>
+                </a>
+                <a href="#" class="nav-item nav-item-active">
+                    <i class="fa fa-cubes w-5 text-center"></i>
+                    <span>我的世界</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa fa-rocket w-5 text-center"></i>
+                    <span>模组中心</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa fa-download w-5 text-center"></i>
+                    <span>下载管理</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa fa-cog w-5 text-center"></i>
+                    <span>设置</span>
+                </a>
+            </nav>
+        </div>
+        
+        <!-- 账号信息区域 -->
+        <div class="mt-auto glass-effect rounded-xl p-3">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-primary/30 flex items-center justify-center">
+                    <i class="fa fa-user"></i>
+                </div>
+                <div>
+                    <div class="text-sm font-medium">未登录</div>
+                    <button class="text-xs text-primary hover:underline">登录账号</button>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    
+    
+     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <a href="https://baidu.com" class="btn-hmcl btn-center p-4">
+                    <i class="fa fa-search text-xl mr-2"></i>
+                    <span class="font-medium">百度</span>
+                </a>
+                <a href="https://slowroads.io/" class="btn-hmcl btn-center p-4">
+                    <i class="fa fa-car text-xl mr-2"></i>
+                    <span class="font-medium">开车</span>
+                </a>
+    </div>
+    
+    
+    
+    
+
+    <div class="mt-12 text-center text-gray-500 text-sm">
+        <p>© 2025 游戏收录站 版权所有</p>
+        <p class="mt-2">本网站仅提供导航服务，所有资源均来自互联网</p>
+    </div>
+    <body class="bg-darker text-light min-h-screen"></body>
+</body>
+</html>
